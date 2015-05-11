@@ -1,8 +1,13 @@
 #include <Windows.h>
 #include <stdio.h>
 
-int wmain(int argc, wchar_t* argv[])
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine,int nCmdShow)
 {
+
+	int argc;
+	LPTSTR *argv;
+	argv = CommandLineToArgvW(GetCommandLine(), &argc);
+
 	// assuming this is invoked like: InstallAstahLicense.exe "c:\stuff\source-license-file" "C:\Program Files\astah-professional\license-file"
 	// exits with 0 on success, nonzero on failure
 
